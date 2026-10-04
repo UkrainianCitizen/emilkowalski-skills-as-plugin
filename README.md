@@ -1,3 +1,10 @@
+> **Fork note:** This is a fork of [emilkowalski/skills](https://github.com/emilkowalski/skills) that adds Claude Code plugin support (`.claude-plugin/plugin.json` and `marketplace.json`). The skills are unchanged. Upstream does not accept outside pull requests, so the plugin layer lives only here.
+>
+> ```bash
+> /plugin marketplace add UkrainianCitizen/emilkowalski-skills-as-plugin
+> /plugin install emilkowalski-skills@emilkowalski-skills
+> ```
+
 
 <a href="http://aiforui.dev/">
 <img width="360" height="202" alt="opengraph-image 2" src="https://github.com/user-attachments/assets/84fca9a6-0b2b-4927-8f48-f3ce194a5c47" />
