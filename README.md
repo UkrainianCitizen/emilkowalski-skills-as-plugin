@@ -27,6 +27,13 @@ You can stay up to date with my skills here:
 npx skills@latest add emilkowalski/skills
 ```
 
+Or, in Claude Code, as a plugin:
+
+```bash
+/plugin marketplace add emilkowalski/skills
+/plugin install emilkowalski-skills@emilkowalski-skills
+```
+
 ## Why use it?
 
 Agents don’t have great taste

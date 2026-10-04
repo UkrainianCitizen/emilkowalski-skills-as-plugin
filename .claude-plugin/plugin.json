@@ -1,0 +1,14 @@
+{
+  "name": "emilkowalski-skills",
+  "description": "Skills for designers and engineers to build better user interfaces: animation, design engineering, UI review, and mobile.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "homepage": "https://github.com/emilkowalski/skills",
+  "repository": "https://github.com/emilkowalski/skills",
+  "license": "MIT",
+  "keywords": ["design", "animation", "ui", "frontend", "design-engineering"],
+  "skills": "./skills/"
+}

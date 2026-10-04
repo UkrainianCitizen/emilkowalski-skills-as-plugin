@@ -1,0 +1,15 @@
+{
+  "name": "emilkowalski-skills",
+  "owner": {
+    "name": "Emil Kowalski"
+  },
+  "metadata": {
+    "description": "Skills for designers and engineers to build better user interfaces."
+  },
+  "plugins": [
+    {
+      "name": "emilkowalski-skills",
+      "source": "./"
+    }
+  ]
+}
