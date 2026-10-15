@@ -2,7 +2,7 @@
 >
 > Changes to skills in this fork:
 >
-> - **apple-design** — Dynamic Type and the Large Content Viewer: scaling is always preferred, bars are the one place Apple keeps controls small on purpose, how a fixed-size control opts in (UIKit and SwiftUI), and the web translation. Sources: *Large Content Viewer: Ensuring Readability for Everyone* (WWDC 2019, session 261), Apple's `UILargeContentViewerInteraction` and SwiftUI `accessibilityShowsLargeContentViewer()` documentation, *Prepare your tvOS apps for Dynamic Type* (WWDC 2026, session 221).
+> - **apple-design** — Dynamic Type and the Large Content Viewer: grow first (scaling is always preferred), the viewer is the exception (only for UI that must stay small, with the tab bar as Apple's example), how a fixed-size control opts in (UIKit and SwiftUI), and the web translation. Sources: *Large Content Viewer: Ensuring Readability for Everyone* (WWDC 2019, session 261), Apple's `UILargeContentViewerInteraction` and SwiftUI `accessibilityShowsLargeContentViewer()` documentation, *Get started with Dynamic Type* (WWDC 2024, session 10074).
 >
 > ```bash
 > /plugin marketplace add UkrainianCitizen/emilkowalski-skills-as-plugin
