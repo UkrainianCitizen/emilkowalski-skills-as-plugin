@@ -1,6 +1,6 @@
 ---
 name: apple-design
-description: Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.
+description: Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading, Dynamic Type and the Large Content Viewer), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.
 ---
 
 # Apple Design
@@ -231,6 +231,9 @@ Apple designs type to change shape with size; the same discipline applies on the
 - **Leading (line-height) tracks size inversely.** Tight on large headings, looser on body copy. Increase it for scripts with tall ascenders/descenders; tighten it for dense, information-heavy UI.
 - **Build hierarchy from weight + size + leading as a set,** not size alone. Emphasize with weight — it adds presence without taking more space.
 - **Respect the user's text-size setting** (Dynamic Type). Scale layout *with* the text — spacing in `rem`/`em`, not fixed px — so a larger font doesn't break the layout.
+- **Scaling is always the first choice; a control that stays fixed-size is the exception.** "Scaling with dynamic type is always preferred to showing the Large Content Viewer." (from *Large Content Viewer*, WWDC 2019.) Hard-coded sizes or constraints "may cause issues like truncation of text or clipping of UI elements." (from *Prepare your tvOS apps for Dynamic Type*, WWDC 2026.) On the web, never cap or block text scaling or page zoom, and don't give text containers fixed widths or heights.
+- **Bars are the one place Apple keeps controls small on purpose.** Tab bar buttons stay small "because that would leave very little room for the main content." Apple's rule: use the Large Content Viewer only "for the case when your custom UI cannot grow in size," and only where items "must remain small due to unavoidable design constraints" (UIKit docs, `UILargeContentViewerInteraction`). A list or a header that can grow must grow.
+- **The Large Content Viewer is the fallback for UI that can't grow.** At the Accessibility text sizes, a long press on such an item shows a larger version of its icon and title, and the user can drag across the bar and release to activate a button. Standard UIKit bars do this for free. A custom control opts in (UIKit: `showsLargeContentViewer`, `largeContentTitle`, `largeContentImage`, plus a `UILargeContentViewerInteraction` on the bar. SwiftUI: `.accessibilityShowsLargeContentViewer()`). The web has no equivalent API. If a control truly can't grow, keep its icon and label legible at 100% zoom, give it an accessible name (`aria-label`) and a tooltip, and make sure browser zoom still enlarges it.
 - **Default to the platform's system font** before a custom face; it already ships optical sizing, tracking tables, and legibility tuning. Override only with a reason.
 
 ```css
@@ -242,6 +245,13 @@ Apple designs type to change shape with size; the same discipline applies on the
   letter-spacing: -0.02em;  /* negative tracking as it grows */
   font-optical-sizing: auto;
 }
+```
+
+```swift
+// A custom bar button that can't grow with Dynamic Type opts in to the Large Content Viewer
+button.showsLargeContentViewer = true
+button.largeContentTitle = "Contacts"
+customBar.addInteraction(UILargeContentViewerInteraction())
 ```
 
 ## 16. Design foundations — the eight principles
@@ -287,4 +297,5 @@ Tactical rules that serve these:
 | Boundary | Rubber-band, don't hard-stop | progressive resistance |
 | Translucent chrome | `backdrop-filter` layer | content scrolls under |
 | Type tracking | Size-specific, never fixed | tighten large text (`-0.02em`), body near `0` |
+| Control that can't grow with text size | Prefer scaling. Fixed-size bar items opt in to the Large Content Viewer | `showsLargeContentViewer` / `.accessibilityShowsLargeContentViewer()`; on the web, never block zoom |
 | Reduced motion | Cross-fade, not slide/spring | `@media (prefers-reduced-motion)` |

@@ -1,4 +1,8 @@
-> **Fork note:** This is a fork of [emilkowalski/skills](https://github.com/emilkowalski/skills) that adds Claude Code plugin support (`.claude-plugin/plugin.json` and `marketplace.json`). The skills are unchanged. Upstream does not accept outside pull requests, so the plugin layer lives only here.
+> **Fork note:** This is a fork of [emilkowalski/skills](https://github.com/emilkowalski/skills) that adds Claude Code plugin support (`.claude-plugin/plugin.json` and `marketplace.json`) and extends some skills with material upstream lacks. Upstream does not accept outside pull requests, so the plugin layer and the extensions live only here. Skills not listed below are unchanged.
+>
+> Changes to skills in this fork:
+>
+> - **apple-design** — Dynamic Type and the Large Content Viewer: scaling is always preferred, bars are the one place Apple keeps controls small on purpose, how a fixed-size control opts in (UIKit and SwiftUI), and the web translation. Sources: *Large Content Viewer: Ensuring Readability for Everyone* (WWDC 2019, session 261), Apple's `UILargeContentViewerInteraction` and SwiftUI `accessibilityShowsLargeContentViewer()` documentation, *Prepare your tvOS apps for Dynamic Type* (WWDC 2026, session 221).
 >
 > ```bash
 > /plugin marketplace add UkrainianCitizen/emilkowalski-skills-as-plugin
