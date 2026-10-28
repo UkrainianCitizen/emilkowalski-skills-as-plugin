@@ -34,3 +34,11 @@ Apple's wording:
 - "Support larger text sizes." (from [*Accessibility*, Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/accessibility), read 2026-10-14.)
 
 Caveat: single source. Both pages are the HIG. The summary paragraph above, including the rule that an element sized to the screen may give up height to the text, is a reading of these quotes, not an HIG sentence.
+
+## Test the largest and the smallest layouts
+
+When a text size rises, test the layouts at the two ends first. The Human Interface Guidelines say "You can streamline the testing process by first testing versions of your experience that use the largest and the smallest layouts." (from [*Layout*, Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/layout), read 2026-10-28.)
+
+Re-measure the longest string the element can show, built-in labels included, on the smallest supported screen at the largest text size. Check that it wraps or stacks without clipping or truncating.
+
+Caveat: single source. The quote is from the HIG Layout page. The re-measure step, with the longest string and the built-in labels, is a reading of that sentence together with the truncation and fixed-frame rules above, not an HIG sentence.
